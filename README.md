@@ -16,3 +16,5 @@ Nail internal application development framework out of the box based on secondar
 ## 钉钉微应用配置参数
 -  在项目配置文件dd.properties中设置相关参数
 
+## demo
+-  springmvc实例项目是dingding-web-springmvc，后期会增加springboot的demo版本
