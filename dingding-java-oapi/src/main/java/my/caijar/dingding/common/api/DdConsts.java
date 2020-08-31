@@ -12,7 +12,6 @@ public class DdConsts {
     }
     public static class DdMsgType {
 
-
         public static final String EVENT = "event";
 
         public DdMsgType() {
