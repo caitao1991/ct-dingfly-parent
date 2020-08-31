@@ -38,4 +38,16 @@ dingding-web-springmvc/target/maven-status/
 
 dingding-web-springmvc/target/apache-tomcat-maven-plugin/
 dingding-web-springmvc/target/tomcat/
+dingding-web-springmvc/src/main/resources/dd_bak.properties
 
+dingding-java-oapi/src/main/resources/
+dingding-java-oapi/src/test/
+dingding-java-oapi/target/maven-archiver/
+dingding-java-oapi/target/maven-status/
+dingding-web-springmvc/target/classes/applicationContext.xml
+dingding-web-springmvc/target/classes/dd.properties
+dingding-web-springmvc/target/classes/dd.properties.template
+dingding-web-springmvc/target/classes/dd_bak.properties
+dingding-web-springmvc/target/classes/log4j.properties
+dingding-web-springmvc/target/classes/spring-service-bean.xml
+dingding-web-springmvc/target/classes/spring-servlet-common.xml

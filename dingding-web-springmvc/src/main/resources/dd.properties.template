@@ -1,10 +1,9 @@
 dd_weiname=dd_mobile_im_test
-dd_appkey=dingxy04zulc8n7edxto
-dd_appsecret=ysllLL6EG5jResaNm_8hJswLjD2BBVKaIKElKWz_5jymfGLUWwGTgotVpAT5poVG
-dd_aeskey=JlopHoAjrIY9RJdMYVknChVyT0lF17cNyhkcPLlDv86
-dd_token=ctfly001
-dd_agentid=272174325
+dd_appkey=微应用key
+dd_appsecret=微应用secret
+dd_aeskey=微应用aeskey
+dd_token=微应用token
+dd_agentid=微应用agentId
 dd_corpid=ding27f81ecd766155a0
-dd_appdesc=�����ڲ�ϵͳ�ش��������
-dd_callback_url=http://boiltech.vaiwan.com/ding/ctfly/portal/callback
-
+dd_appdesc=微应用描述
+dd_callback_url=外部服务器注册回调地址
