@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ct-dingfly-parent</artifactId>
+        <groupId>com.github.bytecai</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>dingding-java-oapi</artifactId>
+    <version>${project.release.version}</version>
+
+
+    <properties>
+        <!--快照测试版本-->
+        <project.release.version>0.0.1-SNAPSHOT</project.release.version>
+        <!-- nexus私服地址 -->
+        <nexus.url>http://10.168.1.181:8081/repository</nexus.url>
+
+        <slf4j.version>1.7.5</slf4j.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <!--运行命令mvn deploy -P ctfly-release 发布正式版-->
+            <id>ctfly-release</id>
+            <properties>
+                <project.release.version>1.0</project.release.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <!--运行命令mvn deploy -P ctfly-snapshots 发布开发版-->
+            <id>ctfly-snapshots</id>
+            <properties>
+                <project.snapshot.version>0.0.1</project.snapshot.version>
+            </properties>
+        </profile>
+
+    </profiles>
+
+
+    <!--指定仓库地址 定义snapshots库和releases库的nexus地址-->
+    <distributionManagement>
+        <repository>
+            <!--此名称要和settings.xml中设置的ID一致 -->
+            <id>ctfly-release</id>
+            <name>ding release</name>
+            <url>
+                http://10.168.1.181:8081/repository/ctfly-release/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>ctfly-snapshots</id>
+            <name>ding snapshots</name>
+            <url>
+                http://10.168.1.181:8081/repository/ctfly-snapshots/
+            </url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!--钉钉后台包导入-->
+        <dependency>
+            <groupId>com.taobao.top</groupId>
+            <artifactId>taobao-sdk-java</artifactId>
+            <version>20200605</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.taobao.top</groupId>
+            <artifactId>lippi-oapi-encrpt</artifactId>
+            <version>20200415</version>
+        </dependency>
+
+        <!-- gson依赖 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <!-- 日志相关jar包 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- 配置从哪个仓库中下载构件，即jar包 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ctfly-nexus</id>
+            <name>Nexus Repository</name>
+            <url>${nexus.url}/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
